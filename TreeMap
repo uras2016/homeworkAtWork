@@ -1,0 +1,26 @@
+// создает сразу отсортированный список по ключу
+
+
+Map treeMap = new TreeMap<>();
+treeMap.put("Bruce", "Willis");
+treeMap.put("Arnold", "Schwarzenegger");
+treeMap.put("Jackie", "Chan");
+treeMap.put("Sylvester", "Stallone");
+treeMap.put("Chuck", "Norris");
+      
+for(Map.Entry e : treeMap.entrySet()){
+ 
+    System.out.println(e.getKey()+" "+ e.getValue());
+}
+
+Вывод на консоль:
+
+Arnold Schwarzenegger
+Bruce Willis
+Chuck Norris
+Jackie Chan
+Sylvester Stallone
+
+Как видим, элементы отсортированы по ключу (Chuck Norris не первый :О).
+
+Чтобы получить ключи и значения нужно использовать методы keySet() и values().
