@@ -1,0 +1,28 @@
+package pets;
+
+import java.util.ArrayList;
+
+public class FishTank {
+ public static void main(String[] args) {
+     ArrayList fishTank = new ArrayList(); // создаем коллекцию
+
+     Fish fish1 = new Fish(2.5f, "Red"); // создаем обьекты класса Fish
+     Fish fish2 = new Fish(5, "Green");
+
+     Fish theFish;
+
+     fishTank.add(fish1); // теперь добавляем созданные обьекты в коллекцию
+     fishTank.add(fish2);
+
+     int fishCount = fishTank.size(); // How many objects are there?
+   
+
+     for (int i=0;i<fishCount; i++){
+
+         theFish = (Fish) fishTank.get(i);  // casting
+         System.out.println("Got the " +
+            theFish.getColor() + " fish that weighs " +
+            theFish.getWeight() + " pounds.");
+     }
+ }
+}
