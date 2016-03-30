@@ -1,6 +1,14 @@
 public class FileData{
     psvm throws IOException{
+    String file_name = "C:/test.txt"; // переменная с адресом файла
     
+    try {
+    ReadFile file = new ReadFile(file_name); // создаем обьект класса ReadFile
+    String[] aryLines = file.OpenFile(); // вызываем метод и записываем строки из файла в массив
+    }
+    catch {
+    
+    }
 }
 
 }
