@@ -5,9 +5,14 @@ public class FileData{
     try {
     ReadFile file = new ReadFile(file_name); // создаем обьект класса ReadFile
     String[] aryLines = file.OpenFile(); // вызываем метод и записываем строки из файла в массив
-    }
-    catch {
     
+    int i;
+    for (i=0; i<aryLines.length;i++){
+    sout(aryLines[i]);
+    }
+}
+    catch (IOException e) {
+    sout(e.getMessage());
     }
 }
 
