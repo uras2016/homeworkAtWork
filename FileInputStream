@@ -1,0 +1,31 @@
+/*The java.io package includes the classes FileInputStream and FileOutputStream that allow you to read and 
+write files one byte at a time. If your program has to work only with text files, you could use 
+the classes Reader and Writer, which are specifically meant for reading character streams.
+*/
+import java.io.FileInputStream;
+import java.io.IOException;
+
+public class MyByteReader {
+
+  public static void main(String[] args) {
+                                                // in file abc.dat was printed text "This is a test file"
+                                                
+    try (FileInputStream myFile =             
+              new FileInputStream("abc.dat")){ /*(1) instantiate them in parentheses right after the try keyword
+                                                and Java will close them for you automatically. This spares you from 
+                                                writing a finally block containing the code for closing resources.*/
+
+      int byteValue;
+
+      while ((byteValue = myFile.read()) != -1) { (2) /*This line starts a while loop that calls the method read(), which 
+                                                        reads one byte, assigns its value to the variable byteCode, and compares it 
+                                                        with -1 (the end of file indicator).*/
+
+          System.out.print(byteValue + " ");   (3) // res - 84 104 105 115 32 105 115 32 97 32 116 101 115 116 32 102 105 108 101
+      }
+    } catch (IOException ioe) {                (4)
+        System.out.println("Could not read file: " +
+                ioe.getMessage());
+    }
+  }
+}
