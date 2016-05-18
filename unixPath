@@ -1,0 +1,36 @@
+
+  // Unix Шлях 
+  // Дано повний шлях до файла в Unix системі. 
+  // Наприклад /home/../var/./lib//file.txt 
+  // Необхідно повернути спрощений варіант. (/var/lib/file.txt) 
+  
+  
+public class UnixPath { 
+  public String simplify(String input) { 
+  if (input == null) return null;
+  
+  String[] fullPath = input.split("/"); // разделяем по символу
+  ArrayList<String> arrayList = new ArrayList<>();
+    
+    for(String x: fullPath){
+      if (x.equals("..")){
+       // if (!linkedList.isEmpty()) 
+      //  linkedList.removeLast(); 
+        continue;
+      }
+      if (x.length() > 0 && !x.equals(".")){
+      arrayList.add("/" + x);
+      }
+    }
+    StringBuilder newPath = new StringBuilder();
+      
+    Iterator<String> iterator = arrayList.iterator();
+      while (iterator.hasNext()){
+        newPath.append(iterator.next());
+    }
+    String res = newPath.toString();
+    if (res.trim().equals("")){ 
+      res = "/" + res;
+      }
+    return res;
+}
